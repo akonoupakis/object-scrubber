@@ -1,0 +1,17 @@
+{
+  "name": "object-scrubber",
+  "main": "object-scrubber.js",
+  "homepage": "https://github.com/akonoupakis/object-scrubber",
+  "authors": [
+    "Apostolis Konoupakis <konoupakis@gmail.com>"
+  ],
+  "description": "walk through an object and change values",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+	"bin",
+    "node_modules",
+    "bower_components",
+  ]
+}
