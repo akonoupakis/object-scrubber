@@ -6,7 +6,7 @@
 Install with [npm](https://www.npmjs.com/)
 
 ```sh
-$ npm install mongodb-proxy --save
+$ npm install object-scrubber --save
 ```
 
 ### Usage
