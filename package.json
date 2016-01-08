@@ -1,33 +1,33 @@
 {
-	"name": "object-scrubber",
-	"version": "1.0.15",
-	"description": "walk through an object and change values",
-	"keywords": [
-		"scrub",
-		"object",
-		"scrubber"
-	],
-	"main": "object-scrubber.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/akonoupakis/object-scrubber.git"
-	},
-	"author": {
-		"name": "Apostolis Konoupakis",
-		"email": "konoupakis@gmail.com",
-		"url": ""
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/akonoupakis/object-scrubber/issues"
-	},
-	"dependencies": {
-		"underscore": "^1.8.3"
-	},
-	"devDependencies": {
-		"commander": "^2.9.0",
-		"gitflow-publisher": "^1.0.0",
-		"gitflow-publisher-bower": "^1.0.0",
-		"gitflow-publisher-npm": "^1.0.0"
-	}
+  "name": "object-scrubber",
+  "version": "1.0.15",
+  "description": "walk through an object and change values",
+  "keywords": [
+    "scrub",
+    "object",
+    "scrubber"
+  ],
+  "main": "object-scrubber.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akonoupakis/object-scrubber.git"
+  },
+  "author": {
+    "name": "Apostolis Konoupakis",
+    "email": "konoupakis@gmail.com",
+    "url": ""
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akonoupakis/object-scrubber/issues"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "commander": "^2.9.0",
+    "gitflow-publisher": "^1.0.1",
+    "gitflow-publisher-bower": "^1.0.1",
+    "gitflow-publisher-npm": "^1.0.1"
+  }
 }
