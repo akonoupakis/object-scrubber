@@ -13,7 +13,7 @@
     };
 
     Scrubber.prototype.when = function (condition, fn) {
-        if (typeof (condition) === 'function' && typeof (fn) === 'function') {
+        if (typeof (condition) === 'function' && typeof (fn) === 'function') { 
             this.processors.push({
                 condition: condition,
                 fn: fn
