@@ -1,6 +1,6 @@
 {
 	"name": "object-scrubber",
-	"version": "1.0.11-pre1",
+	"version": "1.0.11-pre2",
 	"description": "walk through an object and change values",
 	"keywords": [
 		"scrub",
