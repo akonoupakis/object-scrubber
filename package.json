@@ -23,11 +23,5 @@
   },
   "dependencies": {
     "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "commander": "^2.9.0",
-    "gitflow-publisher": "^1.0.2",
-    "gitflow-publisher-bower": "^1.0.1",
-    "gitflow-publisher-npm": "^1.0.1"
   }
 }
