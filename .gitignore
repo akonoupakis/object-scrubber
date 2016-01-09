@@ -5,3 +5,4 @@
 *.tgz
 publish.js
 publish.targets.json
+/.ssh
