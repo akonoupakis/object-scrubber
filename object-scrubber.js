@@ -1,19 +1,18 @@
 ﻿(function () {
-    var global = typeof (window) === "undefined" ? module.exports : window.ObjectScrubber
-    , _
-    ;
+    var _;
 
-    if (typeof (window) === "undefined")
-        _ = require("underscore");
-    else
+    if (typeof (window) !== 'undefined')
         _ = window._;
+    else
+        _ = require("underscore");
+
 
     var Scrubber = function () {
         this.processors = [];
     };
 
     Scrubber.prototype.when = function (condition, fn) {
-        if (typeof (condition) === 'function' && typeof (fn) === 'function') { 
+        if (typeof (condition) === 'function' && typeof (fn) === 'function') {
             this.processors.push({
                 condition: condition,
                 fn: fn
@@ -21,13 +20,13 @@
         }
     };
 
-    Scrubber.prototype.scrub = function (obj, parent) {
+    Scrubber.prototype.scrub = function (obj) {
         var self = this;
 
         var result = obj;
 
         if (_.isArray(obj)) {
-            _.find(obj, function (x, i) {
+            _.each(obj, function (x, i) {
                 var scrubbed = self.scrub(x);
                 obj[i] = scrubbed || x;
             });
@@ -83,14 +82,23 @@
                 if (processor.condition(flagCtx)) {
                     var res = processor.fn(processCtx);
                     if (res !== undefined) {
-                        result = res;
+                        processCtx.value = res;
                     }
                 }
             });
+
+            result = processCtx.value;
         }
 
         return result;
     };
 
     global = Scrubber;
+
+    if (module)
+        module.exports = Scrubber;
+
+    if (typeof (window) !== 'undefined')
+        window.ObjectScrubber = Scrubber;
+
 }());
