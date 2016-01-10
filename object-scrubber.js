@@ -27,8 +27,10 @@
 
         if (_.isArray(obj)) {
             _.each(obj, function (x, i) {
-                var scrubbed = self.scrub(x);
-                obj[i] = scrubbed || x;
+                if (x) {
+                    var scrubbed = self.scrub(x);
+                    obj[i] = scrubbed || x;
+                }
             });
         }
         else if (_.isObject(obj)) {
