@@ -54,7 +54,7 @@
                 }
 
                 _.each(self.processors, function (processor) {
-                    if (processor.condition(flagCtx)) {
+                    if (flagCtx.value !== undefined && processor.condition(flagCtx)) {
                         var res = processor.fn(processCtx);
                         key = processCtx.key;
                         if (res !== undefined)
@@ -81,7 +81,7 @@
             }
 
             _.each(self.processors, function (processor) {
-                if (processor.condition(flagCtx)) {
+                if (flagCtx.value !== undefined && processor.condition(flagCtx)) {
                     var res = processor.fn(processCtx);
                     if (res !== undefined) {
                         processCtx.value = res;
