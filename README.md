@@ -9,6 +9,12 @@ Install with [npm](https://www.npmjs.com/)
 $ npm install object-scrubber --save
 ```
 
+Install with [bower](http://bower.io/)
+
+```sh
+$ bower install object-scrubber --save
+```
+
 ### Usage
 ```js
 var Scrubber = require('object-scrubber');
