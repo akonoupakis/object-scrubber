@@ -9,11 +9,11 @@
 
 [![NPM](https://nodei.co/npm/object-scrubber.png?downloads=true)](https://nodei.co/npm/object-scrubber/)
 
-## Overview
+## overview
 
-A simple recursive utility to scrub deep into objects and change their name and values
+A simple recursive utility to scrub deep into objects and change their name and values.
 
-## Usage
+## usage
 
 ```js
 var Scrubber = require('object-scrubber');
@@ -26,7 +26,7 @@ var testObj = {
         
 var scrubber = new Scrubber();
 
-//=> replacing "_id" properties to "id"
+// replacing "_id" properties to "id"
 scrubber.when(function (x) {
     return x.parent && x.key === '_id';
 }, function (x) {
@@ -36,7 +36,7 @@ scrubber.when(function (x) {
     return x.scrub(x.parent.id);
 });
 
-//=> scrubbing arrays
+// scrubbing arrays
 scrubber.when(function (x) {
     return typeof(x.value) === 'object' && typeof(x.value.length) === 'function';
 }, function (x) {
@@ -52,26 +52,26 @@ scrubber.when(function (x) {
 scrubber.scrub(testObj);
 ```
 
-## License
+## license
 
-	The MIT License (MIT)
+The MIT License (MIT)
 
-	Copyright (c) 2016 akon
+Copyright (c) 2016 akon
 
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-	The above copyright notice and this permission notice shall be included in
-	all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
