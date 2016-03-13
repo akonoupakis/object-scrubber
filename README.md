@@ -1,25 +1,28 @@
 # object-scrubber
-> Walk through an object
+> walks through an object and changes property names and values
 
-## Install
+![NPM VERSION](https://img.shields.io/npm/v/object-scrubber.svg)
+![BOWER VERSION](https://img.shields.io/bower/v/object-scrubber.svg)
+![DOWNLOADS](https://img.shields.io/npm/dt/object-scrubber.svg)
+[![ISSUES](https://img.shields.io/github/issues-raw/akonoupakis/object-scrubber.svg)](https://github.com/akonoupakis/object-scrubber/issues)
+![LICENCE](https://img.shields.io/npm/l/object-scrubber.svg)
 
-Install with [npm](https://www.npmjs.com/)
+[![NPM](https://nodei.co/npm/object-scrubber.png?downloads=true)](https://nodei.co/npm/object-scrubber/)
 
-```sh
-$ npm install object-scrubber --save
-```
+## Overview
 
-Install with [bower](http://bower.io/)
+A simple recursive utility to scrub deep into objects and change their name and values
 
-```sh
-$ bower install object-scrubber --save
-```
+## Usage
 
-### Usage
 ```js
 var Scrubber = require('object-scrubber');
     
-var testObj = {};
+var testObj = {
+    _id: 'test',
+    title: 'test',
+    collection: ['test1', 'test2']    
+};
         
 var scrubber = new Scrubber();
 
@@ -35,13 +38,13 @@ scrubber.when(function (x) {
 
 //=> scrubbing arrays
 scrubber.when(function (x) {
-    return _.isArray(x.value);
+    return typeof(x.value) === 'object' && typeof(x.value.length) === 'function';
 }, function (x) {
     x.scrub(x.value);
 });
 
 scrubber.when(function (x) {
-    return typeof (x.value) === 'string';
+    return typeof(x.value) === 'string';
 }, function (x) {
     return x.value + '_processed!';
 });
