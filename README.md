@@ -52,7 +52,7 @@ scrubber.when(function (x) {
 scrubber.scrub(testObj);
 ```
 
-## license
+## License
 
 	The MIT License (MIT)
 
