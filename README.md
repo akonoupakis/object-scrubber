@@ -1,6 +1,7 @@
 # object-scrubber
 > walks through an object and changes property names and values
 
+[![Build Status](https://api.travis-ci.org/travis/akonoupakis/object-scrubber/master.svg)](http://travis-ci.org/mochajs/mocha)
 ![NPM VERSION](https://img.shields.io/npm/v/object-scrubber.svg)
 ![BOWER VERSION](https://img.shields.io/bower/v/object-scrubber.svg)
 ![DOWNLOADS](https://img.shields.io/npm/dt/object-scrubber.svg)
