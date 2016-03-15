@@ -1,7 +1,7 @@
 {
 	"name": "object-scrubber",
 	"main": "object-scrubber.js",
-	"version": "1.0.26",
+	"version": "1.0.27",
 	"homepage": "https://github.com/akonoupakis/object-scrubber",
 	"authors": [
 		"Apostolis Konoupakis <konoupakis@gmail.com>"
