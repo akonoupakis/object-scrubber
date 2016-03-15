@@ -1,7 +1,7 @@
 # object-scrubber
 > walks through an object and changes property names and values
 
-[![Build Status](https://api.travis-ci.org/travis/akonoupakis/object-scrubber/master.svg)](http://travis-ci.org/mochajs/mocha)
+[![Build Status](https://api.travis-ci.org/akonoupakis/object-scrubber.svg?branch=master)](http://travis-ci.org/akonoupakis/object-scrubber)
 ![NPM VERSION](https://img.shields.io/npm/v/object-scrubber.svg)
 ![BOWER VERSION](https://img.shields.io/bower/v/object-scrubber.svg)
 ![DOWNLOADS](https://img.shields.io/npm/dt/object-scrubber.svg)
@@ -39,7 +39,7 @@ scrubber.when(function (x) {
 
 // scrubbing arrays
 scrubber.when(function (x) {
-    return typeof(x.value) === 'object' && typeof(x.value.length) === 'function';
+    return isArray(x.value);
 }, function (x) {
     x.scrub(x.value);
 });
