@@ -37,13 +37,14 @@ scrubber.when(function (x) {
     return x.scrub(x.parent.id);
 });
 
-// scrubbing arrays
+// scrubbing recuring objects and arrays
 scrubber.when(function (x) {
-    return isArray(x.value);
+    return typeof(x.value) === 'object';
 }, function (x) {
-    x.scrub(x.value);
+    return x.scrub(x.value);
 });
 
+// changing string values
 scrubber.when(function (x) {
     return typeof(x.value) === 'string';
 }, function (x) {
