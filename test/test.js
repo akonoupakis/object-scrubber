@@ -17,7 +17,7 @@ describe('Scrubber.scrub', function () {
     });
 
     scrubber.when(function (x) {
-         return _.isObject(x.value);
+         return typeof(x.value) === 'object';
     }, function (x) {
          return x.scrub(x.value);
     });    

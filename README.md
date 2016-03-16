@@ -12,7 +12,7 @@
 
 ## overview
 
-A simple recursive utility to scrub deep into objects and change their name and values.
+A simple recursive utility to scrub deep into objects and change their property name and values.
 
 ## usage
 
