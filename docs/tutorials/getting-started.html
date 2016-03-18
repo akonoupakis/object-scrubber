@@ -1,0 +1,23 @@
+<p>Scrub objects giving a condition function and a process function that is invoked if the condition is true.</p>
+
+<pre class="prettyprint">
+    
+    var <a href="Scrubber.html">Scrubber</a> = require('object-scrubber');
+        
+    var testObj = {
+        _id: 'test',
+        title: 'test',
+        collection: ['test1', 'test2']    
+    }
+            
+    var scrubber = new Scrubber()
+
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>x) {
+        return typeof(x.<a href="Condition.html#value">value</a>) === 'string'
+    }, function (<a href="Trigger.html">x</a>) {
+        return x.<a href="Trigger.html#value">value</a> + '_processed!'
+    });
+
+    scrubber.<a href="Scrubber.html#scrub">scrub</a>(testObj);
+        
+</pre>

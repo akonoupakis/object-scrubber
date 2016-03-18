@@ -1,0 +1,33 @@
+<p>Here below are a few examples on changing property values.</p>
+
+<pre class="prettyprint">
+    
+    var <a href="Scrubber.html">Scrubber</a> = require('object-scrubber');
+        
+    var testObj = { }
+    var scrubber = new Scrubber()
+
+    // scrubbing string properties
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>x) {
+        return typeof(x.<a href="Condition.html#value">value</a>) === 'string'
+    }, function (<a href="Trigger.html">x</a>) {
+        return x.<a href="Trigger.html#value">value</a> + '_processed!'
+    });
+    
+    // scrubbing number properties
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>x) {
+        return typeof(x.<a href="Condition.html#value">value</a>) === 'number'
+    }, function (<a href="Trigger.html">x</a>) {
+        return x.<a href="Trigger.html#value">value</a> + 1
+    });
+    
+    // scrubbing properties with specific keys
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>x) {
+        return x.<a href="Condition.html#parent">parent</a> !== undefined && x.<a href="Condition.html#key">key</a> === 'someKey' && typeof(x.<a href="Condition.html#value">value</a>) === 'string'
+    }, function (<a href="Trigger.html">x</a>) {
+        return x.<a href="Trigger.html#value">value</a> + '_processed';
+    });
+
+    scrubber.<a href="Scrubber.html#scrub">scrub</a>(testObj);
+        
+</pre>

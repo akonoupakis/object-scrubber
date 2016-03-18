@@ -1,0 +1,25 @@
+<p>Here below is an example on changing a property name.</p>
+
+<pre class="prettyprint">
+    
+    var <a href="Scrubber.html">Scrubber</a> = require('object-scrubber');
+        
+    var testObj = { }            
+    var scrubber = new Scrubber()
+
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>) {
+        return x.<a href="Condition.html#parent">parent</a> && x.<a href="Condition.html#key">key</a> === '_id'
+    }, function (<a href="Trigger.html">x</a>) {
+        // set the value to a new property in the parent
+        x.<a href="Trigger.html#parent">parent</a>.id = x.value
+        // delete the previous property
+        delete x.<a href="Trigger.html#parent">parent</a>._id
+        // change to the new key for the next processors to find 
+        x.<a href="Trigger.html#key">key</a> = 'id'
+        // scrub the new value for other processors to process
+        return x.<a href="Trigger.html#scrub">scrub</a>(x.<a href="Trigger.html#parent">parent</a>.id)
+    });
+
+    scrubber.<a href="Scrubber.html#scrub">scrub</a>(testObj);
+        
+</pre>

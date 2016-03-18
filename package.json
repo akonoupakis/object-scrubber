@@ -1,6 +1,6 @@
 {
 	"name": "object-scrubber",
-	"version": "1.0.34",
+	"version": "1.0.35",
 	"description": "walks through an object and changes property names and values",
 	"keywords": [
 		"scrub",
@@ -18,7 +18,7 @@
 		"url": ""
 	},
 	"scripts": {
-		"test": "mocha"
+		"test": "standard ./object-scrubber.js & mocha"
 	},
 	"license": "MIT",
 	"bugs": {
@@ -28,6 +28,10 @@
 		"underscore": "^1.8.3"
 	},
 	"devDependencies": {
-		"mocha": "^2.4.5"
+		"dependency-check": "^2.5.1",
+		"mocha": "^2.4.5",
+		"jsdoc": "^3.4.0",
+		"minami": "^1.1.1",
+		"standard": "^6.0.8"
 	}
 }
