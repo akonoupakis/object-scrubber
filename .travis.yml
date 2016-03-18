@@ -5,4 +5,4 @@ node_js:
 - '0.10'
 before_script:
 - dependency-check ./package.json
-- dependency-check ./package.json -i express -i minami -i mocha -i standard -i dependency-check --unused
+- dependency-check ./package.json -i minami -i mocha -i standard -i dependency-check --unused
