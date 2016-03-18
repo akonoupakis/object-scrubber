@@ -1,0 +1,26 @@
+<p>From tha layout of this project, if you need to scrub recurringly, you have to say it so!</p>
+
+<pre class="prettyprint">
+    
+    var <a href="Scrubber.html">Scrubber</a> = require('object-scrubber');
+        
+    var testObj = { }
+    var scrubber = new Scrubber()
+
+    // here we set a processor to scrub in passin objects and arrays
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>) {
+        return typeof(x.<a href="Condition.html#value">value</a>) === 'object'
+    }, function (<a href="Trigger.html">x</a>) {
+        // scrub the value (object or array)
+        return x.<a href="Trigger.html#scrub">scrub</a>(x.<a href="Trigger.html#value">value</a>)
+    });
+
+    scrubber.<a href="Scrubber.html#when">when</a>(function (<a href="Condition.html">x</a>x) {
+        return typeof(x.<a href="Condition.html#value">value</a>) === 'string'
+    }, function (<a href="Trigger.html">x</a>) {
+        return x.<a href="Trigger.html#value">value</a> + '_processed!'
+    });
+
+    scrubber.<a href="Scrubber.html#scrub">scrub</a>(testObj);
+        
+</pre>
