@@ -1,36 +1,37 @@
 {
-	"name": "object-scrubber",
-	"version": "1.0.37",
-	"description": "walks through an object and changes property names and values",
-	"keywords": [
-		"scrub",
-		"object",
-		"scrubber"
-	],
-	"main": "object-scrubber.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/akonoupakis/object-scrubber.git"
-	},
-	"author": {
-		"name": "Apostolis Konoupakis",
-		"email": "konoupakis@gmail.com",
-		"url": ""
-	},
-	"scripts": {
-		"test": "standard ./object-scrubber.js & mocha"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/akonoupakis/object-scrubber/issues"
-	},
-	"dependencies": {
-		"underscore": "^1.8.3"
-	},
-	"devDependencies": {
-		"dependency-check": "^2.5.1",
-		"mocha": "^2.4.5",
-		"minami": "^1.1.1",
-		"standard": "^6.0.8"
-	}
+  "name": "object-scrubber",
+  "version": "1.0.37",
+  "description": "walks through an object and changes property names and values",
+  "keywords": [
+    "scrub",
+    "object",
+    "scrubber"
+  ],
+  "main": "object-scrubber.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akonoupakis/object-scrubber.git"
+  },
+  "author": {
+    "name": "Apostolis Konoupakis",
+    "email": "konoupakis@gmail.com",
+    "url": ""
+  },
+  "scripts": {
+    "test": "standard ./object-scrubber.js & mocha"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akonoupakis/object-scrubber/issues"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "dependency-check": "^2.5.1",
+    "jsdoc": "^3.4.0",
+    "minami": "^1.1.1",
+    "mocha": "^2.4.5",
+    "standard": "^6.0.8"
+  }
 }
