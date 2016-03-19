@@ -1,8 +1,7 @@
-[{
+{
     "getting-started": {
         "title": "Getting started"
-    }
-}, {
+    }, 
     "changing-property-names": {
         "title": "Changing property names"
     },
@@ -12,4 +11,4 @@
     "recurring-scrubbing": {
         "title": "Recurring scrubbing" 
     }
-}]
+}
