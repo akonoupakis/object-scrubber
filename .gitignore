@@ -7,3 +7,4 @@ publish.js
 publish.targets.json
 /.ssh
 /.vscode
+*.cmd
