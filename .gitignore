@@ -8,3 +8,4 @@ publish.targets.json
 /.ssh
 /.vscode
 *.cmd
+jsdoc-update.js
