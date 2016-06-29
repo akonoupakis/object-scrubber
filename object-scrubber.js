@@ -1,4 +1,4 @@
-﻿var _
+﻿let _
 
 /**
  * Represents the Scrubber class.
@@ -6,76 +6,77 @@
 
 * @property {array} processors - The processors injected
 */
-var Scrubber = function () {
-  this.processors = []
+const Scrubber = function() {
+	this.processors = [];
 }
 
 /**
-   * Set a processor.
+ * Set a processor.
 
-   * @param {function} condition - The condition passing a {@link Condition} instance as an argument (should return true/false)
-   * @param {function} trigger - The trigger passing a {@link Trigger} instance as an argument (should return the scrubbed result)
-   */
-Scrubber.prototype.when = function (condition, trigger) {
-  if (typeof (condition) === 'function' && typeof (trigger) === 'function') {
-    this.processors.push({
-      condition: condition,
-      fn: trigger
-    })
-  }
+ * @param {function} condition - The condition passing a {@link Condition} instance as an argument (should return true/false)
+ * @param {function} trigger - The trigger passing a {@link Trigger} instance as an argument (should return the scrubbed result)
+ * @returns {void}
+ */
+Scrubber.prototype.when = function( condition, trigger ) {
+	if ( typeof ( condition ) === 'function' && typeof ( trigger ) === 'function' ) {
+		this.processors.push( {
+			condition : condition,
+			fn : trigger
+		} );
+	}
 }
 
 /**
  * Scrub a target object.
  */
-Scrubber.prototype.scrub = function (obj) {
-  var self = this
+Scrubber.prototype.scrub = function( obj ) {
+	const self = this;
 
-  var result = obj
+	let result = obj;
 
-  if (_.isArray(obj)) {
-    _.each(obj, function (x, i) {
-      if (x) {
-        var scrubbed = self.scrub(x)
-        obj[i] = scrubbed || x
-      }
-    })
-  } else if (_.isObject(obj)) {
-    for (var objKey in obj) {
-      var key = objKey
+	if ( _.isArray( obj ) ) {
+		_.each( obj, function( x, i ) {
+			if ( x ) {
+				const scrubbed = self.scrub( x );
+				obj[i] = scrubbed || x;
+			}
+		});
+	} else if ( _.isObject( obj ) ) {
+		for ( var objKey in obj ) {
+			var key = objKey;
 
-      var oflagCtx = new Condition(self, obj, key, obj[key])
-      var oprocessCtx = new Trigger(self, obj, key, obj[key])
+			var oflagCtx = new Condition( self, obj, key, obj[key] );
+			var oprocessCtx = new Trigger( self, obj, key, obj[key] );
 
-      _.each(self.processors, function (processor) {
-        if (oflagCtx.value !== undefined && processor.condition(oflagCtx)) {
-          var res = processor.fn(oprocessCtx)
-          key = oprocessCtx.key
-          if (res !== undefined) {
-            obj[key] = res
-          }
-        }
-      })
-    }
-    result = obj
-  } else {
-    var flagCtx = new Condition(self, null, null, obj)
-    var processCtx = new Trigger(self, null, null, obj)
+			_.each( self.processors, function ( processor ) {
+				if ( oflagCtx.value !== undefined && processor.condition( oflagCtx ) ) {
+					var res = processor.fn( oprocessCtx );
+					key = oprocessCtx.key;
+					if ( res !== undefined ) {
+						obj[key] = res;
+					}
+				}
+			});
+		}
+		result = obj;
+	} else {
+		var flagCtx = new Condition( self, null, null, obj );
+		var processCtx = new Trigger( self, null, null, obj );
 
-    _.each(self.processors, function (processor) {
-      if (flagCtx.value !== undefined && processor.condition(flagCtx)) {
-        var res = processor.fn(processCtx)
-        if (res !== undefined) {
-          processCtx.value = res
-        }
-      }
-    })
+		_.each( self.processors, function ( processor ) {
+			if ( flagCtx.value !== undefined && processor.condition( flagCtx ) ) {
+				var res = processor.fn( processCtx );
+				if ( res !== undefined ) {
+					processCtx.value = res;
+				}
+			}
+		});
 
-    result = processCtx.value
-  }
+		result = processCtx.value;
+	}
 
-  return result
-}
+	return result;
+
 
 /**
  * Represents the condition function passed on the Scrubber.when.
@@ -90,7 +91,7 @@ Scrubber.prototype.scrub = function (obj) {
  * @property {string} key - The property key
  * @property {any} value - The property value
  */
-var Condition = function (sender, parent, key, value) {
+var Condition = function( sender, parent, key, value ) {
   this.scrubber = sender
   this.parent = parent
   this.key = key
@@ -110,7 +111,7 @@ var Condition = function (sender, parent, key, value) {
  * @property {string} key - The property key
  * @property {any} value - The property value
  */
-var Trigger = function (sender, parent, key, value) {
+var Trigger = function( sender, parent, key, value ) {
   this.scrubber = sender
   this.parent = parent
   this.key = key
@@ -122,22 +123,22 @@ var Trigger = function (sender, parent, key, value) {
 
  * @param {any} value - A value
  */
-Trigger.prototype.scrub = function (value) {
-  this.scrubber.scrub(value)
+Trigger.prototype.scrub = function( value ) {
+  this.scrubber.scrub( value )
 }
 
-;(function () {
-  if (typeof (window) !== 'undefined') {
-    _ = window._
+;(function() {
+  if ( typeof (window) !== 'undefined' ) {
+	_ = window._
   } else {
-    _ = require('underscore')
+	_ = require( 'underscore' )
   }
 
-  if (module) {
-    module.exports = Scrubber
+  if ( module ) {
+	module.exports = Scrubber
   }
 
-  if (typeof (window) !== 'undefined') {
-    window.ObjectScrubber = Scrubber
+  if ( typeof (window) !== 'undefined' ) {
+	window.ObjectScrubber = Scrubber
   }
 }())

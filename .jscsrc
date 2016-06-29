@@ -1,0 +1,77 @@
+{
+    "requireCurlyBraces": [
+        "do",
+        "try",
+        "catch",
+        "finally"
+    ],
+    "disallowOperatorBeforeLineBreak": ["&&", "||"],
+    "requireParenthesesAroundIIFE": true,
+    "requireCommaBeforeLineBreak": true,
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "requireDotNotation": {
+        "allExcept": ["snake_case"]
+    },
+    "requireSpacesInForStatement": false,
+    "requireSpaceBetweenArguments": false,
+    "disallowMultipleLineStrings": true,
+    "disallowSpaceBeforeComma": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpacesInsideParentheses": {
+      "all": true,
+      "ignoreParenthesizedExpression": true,
+      "except": [ "(", ")" ]
+    },
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "return",
+        "try",
+        "catch"
+    ],
+    "requireNewlineBeforeBlockStatements" : [
+        "try",
+        "catch",
+        "finally"
+    ],
+    "requireSpacesInsideObjectBrackets": "all",
+    "disallowSpacesInsideArrayBrackets": {
+        "allExcept": ["[", "]"]
+    },
+    "requireSpacesInConditionalExpression": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "requireLineFeedAtFileEnd": true,
+    "requireSpaceBeforeBinaryOperators": [
+        "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+        "&=", "|=", "^=", "+=",
+        "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+        "|", "^", "&&", "||", "===", "==", ">=",
+        "<=", "<", ">", "!=", "!=="
+    ],
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireSpacesInNamedFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireCapitalizedComments": true,
+    "requireSpaceBeforeBinaryOperators": [],
+    "disallowKeywords": ["with"],
+    "disallowSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowSpacesInNamedFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireSpaceAfterObjectKeys": true,
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpaceBeforePostfixUnaryOperators": true,
+    "disallowSpaceBeforeBinaryOperators": [","]
+}
